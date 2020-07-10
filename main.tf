@@ -10,7 +10,7 @@ terraform {
     backend "s3" {
       encrypt = true
       bucket = "ifbi-poc-terraform"
-      key = "path/path/terraform.tfstate"
+      key = "ifbi-poc/terraform.tfstate"
       region = "${data.aws_region.current.name}"
   }
 }
