@@ -11,7 +11,7 @@ terraform {
       encrypt = true
       bucket = "ifbi-poc-terraform"
       key = "ifbi-poc/terraform.tfstate"
-      region = "${data.aws_region.current.name}"
+      region = "us-east-1"
   }
 }
 output "awsRegion" {
