@@ -24,7 +24,6 @@ resource "aws_ecs_task_definition" "ecstaskDefinition" {
   container_definitions = file("taskdef.json")
   execution_role_arn = "${aws_iam_role.ecs_tasks_execution_role.arn}"
   requires_compatibilities = "FARGATE"
-  family = "pocFamily"
   network_mode = "awsvpc"
 }
 resource "aws_ecs_service" "ecsService" {
