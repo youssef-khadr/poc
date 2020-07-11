@@ -25,6 +25,8 @@ resource "aws_ecs_task_definition" "ecstaskDefinition" {
   execution_role_arn = "${aws_iam_role.ecs_tasks_execution_role.arn}"
   requires_compatibilities = ["FARGATE"]
   network_mode = "awsvpc"
+  cpu = 10
+  memory = 128
 }
 resource "aws_ecs_service" "ecsService" {
   name            = "pocService"

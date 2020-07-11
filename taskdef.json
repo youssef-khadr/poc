@@ -3,8 +3,6 @@
     "name": "pocApp",
     "image": "<IMAGE1_NAME>",
     "essential": true,
-    "cpu": "256",
-    "memory": "512",
 	  "portMappings": [
       {
         "containerPort": 80,
