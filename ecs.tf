@@ -33,7 +33,7 @@ resource "aws_ecs_service" "ecsService" {
   cluster         = " arn:aws:ecs:us-east-1:854889429362:cluster/pocCluster"
   task_definition = "${aws_ecs_task_definition.ecstaskDefinition.arn}"
   desired_count   = 1
-  launch_type = FARGATE
+  launch_type = "FARGATE"
 
    deployment_controller {
     type = "CODE_DEPLOY"
