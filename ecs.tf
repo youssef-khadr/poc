@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "ecs_tasks_execution_role" {
 #}
 resource "aws_ecs_service" "ecsService" {
   name            = "pocService"
-  cluster         = " arn:aws:ecs:us-east-1:854889429362:cluster/pocCluster"
+  cluster         = "arn:aws:ecs:us-east-1:854889429362:cluster/pocCluster"
   task_definition = "pocFamily"
   desired_count   = 1
   launch_type = "FARGATE"
