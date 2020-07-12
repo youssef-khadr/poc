@@ -1,0 +1,29 @@
+{
+    "taskDefinition": "pocFamily",
+    "cluster": "pocCluster",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:854889429362:targetgroup/target-group-1/00fe198787fe9b88",
+            "containerName": "pocApp",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "CODE_DEPLOY"
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-02027a1b6a28ff656",
+                "subnet-036eb453538994b3c"
+            ],
+            "securityGroups": [
+                "sg-04d65331ae8566b86"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}

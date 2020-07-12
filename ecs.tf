@@ -1,13 +1,13 @@
-data "aws_iam_policy_document" "ecs_tasks_execution_role" {
-  statement {
-    actions = ["sts:AssumeRole"]
-
-    principals {
-      type        = "Service"
-      identifiers = ["ecs-tasks.amazonaws.com"]
-    }
-  }
-}
+#data "aws_iam_policy_document" "ecs_tasks_execution_role" {
+#  statement {
+#    actions = ["sts:AssumeRole"]
+#
+#    principals {
+#      type        = "Service"
+#      identifiers = ["ecs-tasks.amazonaws.com"]
+#    }
+#  }
+#}
 
 #resource "aws_iam_role" "ecs_tasks_execution_role" {
 #  name               = "ecsTaskExecutionRole"
@@ -28,21 +28,21 @@ data "aws_iam_policy_document" "ecs_tasks_execution_role" {
 #  cpu = 10
 #  memory = 128
 #}
-resource "aws_ecs_service" "ecsService" {
-  name            = "pocService"
-  cluster         = "arn:aws:ecs:us-east-1:854889429362:cluster/pocCluster"
-  task_definition = "pocFamily"
-  desired_count   = 1
-  launch_type = "FARGATE"
-
-   deployment_controller {
-    type = "CODE_DEPLOY"
-  }
-
-  load_balancer {
-    target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:854889429362:targetgroup/target-group-1/00fe198787fe9b88"
-    container_name   = "pocApp"
-    container_port   = 80
-  }
-
-}
+#resource "aws_ecs_service" "ecsService" {
+#  name            = "pocService"
+#  cluster         = "arn:aws:ecs:us-east-1:854889429362:cluster/pocCluster"
+#  task_definition = "pocFamily"
+#  desired_count   = 1
+#  launch_type = "FARGATE"
+#
+#   deployment_controller {
+#    type = "CODE_DEPLOY"
+#  }
+#
+#  load_balancer {
+#    target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:854889429362:targetgroup/target-group-1/00fe198787fe9b88"
+#    container_name   = "pocApp"
+#    container_port   = 80
+#  }
+#
+#}

@@ -7,9 +7,4 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "pocApp"
           ContainerPort: 80
-        PlatformVersion: "LATEST"
-        NetworkConfiguration:
-            AwsvpcConfiguration:
-              Subnets: ["subnet-02027a1b6a28ff656", "subnet-036eb453538994b3c"]
-              SecurityGroups: ["sg-04d65331ae8566b86"]
-              AssignPublicIp: "ENABLED"
+

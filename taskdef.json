@@ -1,14 +1,24 @@
-[
-  {
-    "name": "pocApp",
-    "image": "<IMAGE1_NAME>",
-    "essential": true,
-	  "portMappings": [
-      {
-        "containerPort": 80,
-	      "hostPort":80,
-        "protocol": "tcp"
-      }
-    ]
-  }
-]
+{
+  "executionRoleArn": "arn:aws:iam::854889429362:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "pocApp",
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+	    "portMappings": [
+        {
+          "containerPort": 80,
+		      "hostPort":80,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512",
+  "family": "pocFamily"
+}
